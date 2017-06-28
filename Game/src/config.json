@@ -1,0 +1,45 @@
+{
+  "quiz" : [
+
+    {
+        "question": "Who is the strongest?",
+        "options": [
+            "Superman",
+            "Batman",
+            "Hulk",
+            "Iron Man"
+        ],
+        "answer": "Hulk"
+    },
+    {
+        "question": "5 + 7 = ?",
+        "options": [
+            "10",
+            "11",
+            "12",
+            "13"
+        ],
+        "answer": "12"
+    },
+    {
+        "question": "JSON stands for?",
+        "options": [
+            "JavaScript Object Oriented Notation",
+            "JavaScript Object Notation",
+            "Java Object Notation",
+            "JavaScript Object Narattor"
+        ],
+        "answer": "JavaScript Object Notation"
+    },
+    {
+        "question": "Who came up with the theory of relativity?",
+        "options": [
+            "Sir Isaac Newton",
+            "Nicolaus Copernicus",
+            "Albert Einstein",
+            "Ralph Waldo Emmerson"
+        ],
+        "answer": "Albert Einstein"
+    }
+  ]
+}
