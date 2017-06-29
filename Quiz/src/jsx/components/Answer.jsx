@@ -1,7 +1,7 @@
 import React from "react";
 
 const Answer = props => (
-    <form onSubmit={props.onClickCallback}>
+    <form>
         {props.options.map((option,i) => (
             <div className={`option${i}`} key={i}>
                 <input
