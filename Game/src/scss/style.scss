@@ -19,43 +19,19 @@
 @import "components/roboto";
 @import "components/typography";
 @import "components/transitions";
-@import "components/cards";
-@import "components/toast";
-@import "components/tabs";
-@import "components/tooltip";
-@import "components/buttons";
-@import "components/dropdown";
-@import "components/waves";
-@import "components/modal";
-@import "components/collapsible";
-@import "components/chips";
-@import "components/materialbox";
-@import "components/forms/forms";
-@import "components/table_of_contents";
-@import "components/sideNav";
-@import "components/preloader";
-@import "components/slider";
-@import "components/carousel";
-@import "components/tapTarget";
-@import "components/pulse";
-@import "components/date_picker/default";
-@import "components/date_picker/default.date";
-@import "components/date_picker/default.time";
 
 
-
-input[type="radio"] {
-    display: none;
+span{
+    display: inline-block;
+    margin: 0.5em;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    cursor: pointer;
 }
 
-input[type="radio"]:checked + label {
-    opacity: 1;
+.selected{
+    background-color:red;
+    color: #000;
 }
-
-.submit-button {
-	opacity: 0.5;
-	&.visible {
-		opacity: 1;
-	}
-}
-

@@ -5,7 +5,9 @@ const Answer = (props) => {
 
     return( 
         <div>
-        Answer
+            {props.selectedNumbers.map( (number,i) => {
+                <span key={i}>{number}</span>
+            })}
         </div>
     )
 }
