@@ -4,9 +4,11 @@ const Answer = (props) => {
 
 
     return( 
-        <div>
+        <div className="answers">
             {props.selectedNumbers.map( (number,i) => {
-                <span key={i}>{number}</span>
+               return <span key={i} onClick={() => props.unSelectedNumbers(number)} >
+                   {number}
+                   </span>
             })}
         </div>
     )
