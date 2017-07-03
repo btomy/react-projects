@@ -9,7 +9,7 @@ const Stars = (props) => {
 
 
     return( 
-        <div>
+        <div className='col-xs-5'>
             {stars}
         </div>
     )

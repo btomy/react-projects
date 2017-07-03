@@ -10,15 +10,17 @@ class Game extends React.Component{
 
         this.state = {
             selectedNumbers : [],
-            randomNumberOfStars : Math.floor(Math.random() * 9),
+            randomNumberOfStars : 1 + Math.floor(Math.random() * 9),
             answerIsCorrect : null,
-            usedNumbers : [4,5],
+            usedNumbers : [],
+            reDraws : 5,
         }
 
         this._selectNumber = this._selectNumber.bind(this);
         this._unSelectNumber = this._unSelectNumber.bind(this);
         this._checkAnswer = this._checkAnswer.bind(this);
         this._acceptAnswer = this._acceptAnswer.bind(this);
+        this._reDraw = this._reDraw.bind(this);
     }
 
     _selectNumber(clickedNumber) {
@@ -39,7 +41,12 @@ class Game extends React.Component{
     }
 
     _acceptAnswer() {
-
+        this.setState({
+            usedNumbers : this.state.usedNumbers.concat(this.state.selectedNumbers),
+            selectedNumbers : [],
+            answerIsCorrect : null,
+            randomNumberOfStars : 1 + Math.floor(Math.random() * 9),
+        })
     }
 
     _checkAnswer() {
@@ -48,26 +55,39 @@ class Game extends React.Component{
         })
     }
 
+    _reDraw() {
+        this.setState({
+            randomNumberOfStars: 1 + Math.floor(Math.random() * 9),
+            answerIsCorrect: null,
+            selectedNumbers: [],
+        })
+    }
+
 
     render(){
-        const { selectedNumbers, randomNumberOfStars,answerIsCorrect, usedNumbers } = this.state;
+        const { selectedNumbers, randomNumberOfStars,answerIsCorrect, usedNumbers, reDraws } = this.state;
 
         return(
             <div className="container">
                 <h3>Play nine </h3>
-                <Stars 
+                <div className='row'>
+                    <Stars 
                     numberOfStars={randomNumberOfStars} />
-                <Button
-                    chekAnswer = {this._checkAnswer}
-                    answerIsCorrect = {answerIsCorrect} 
-                    selectedNumbers = {selectedNumbers} />
-                <Answer
-                    unSelectedNumbers = {this._unSelectNumber} 
-                    selectedNumbers = {selectedNumbers} />
-                <Numbers
-                    usedNumbers= {usedNumbers}
-                    selectNumber = {this._selectNumber}
-                    selectedNumbers={selectedNumbers}/>
+                    <Button
+                        reDraw = {this._reDraw}
+                        acceptAnswer = {this._acceptAnswer}
+                        chekAnswer = {this._checkAnswer}
+                        answerIsCorrect = {answerIsCorrect} 
+                        selectedNumbers = {selectedNumbers} />
+                    <Answer
+                        unSelectedNumbers = {this._unSelectNumber} 
+                        selectedNumbers = {selectedNumbers} />
+                    <Numbers
+                        usedNumbers= {usedNumbers}
+                        selectNumber = {this._selectNumber}
+                        selectedNumbers={selectedNumbers}/>
+                </div>
+                
             </div>
         )
     }

@@ -1,24 +1,6 @@
 @charset "UTF-8";
 
-// Mixins
-@import "components/mixins";
-@import "components/color";
-
-// Variables;
-@import "components/variables";
-
-// Reset
-@import "components/normalize";
-
-// components
-@import "components/global";
-@import "components/badges";
-@import "components/icons-material-design";
-@import "components/grid";
-@import "components/navbar";
-@import "components/roboto";
-@import "components/typography";
-@import "components/transitions";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 
 span{
@@ -29,9 +11,22 @@ span{
     background-color: #fff;
     text-align: center;
     cursor: pointer;
+    border: 1px solid;
+}
+
+.card{
+    background: lightgray;
+    border: 1px solid;
+    margin-top: 30px;
 }
 
 .selected{
-    background-color:red;
-    color: #000;
+    background-color:#eee;
+    color: #ddd;
+    cursor: not-allowed;
+}
+
+.used{
+    background-color: #aaddaa;
+    color: #99bb99;
 }

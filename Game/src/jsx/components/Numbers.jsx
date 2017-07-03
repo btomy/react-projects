@@ -13,7 +13,7 @@ const Numbers = (props) => {
     }
     
     return( 
-        <div className='card-panel grey center-align'>
+        <div className='card text-center col-xs-12'>
             {numbers.map( (number,i) => {
                 return <span 
                         className={numberClassName(number)}
