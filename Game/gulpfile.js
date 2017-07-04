@@ -16,7 +16,7 @@ function copy(settings) {
 
 gulp.task("javascript", function() {
 	browserify(config.source + "jsx/index.jsx", {debug:true})
-		.transform(babel, {presets: ['es2015', 'react']})
+		.transform(babel, {presets: ['es2015', 'react','stage-0']})
 		.bundle()
 		.pipe(source('bundle.js'))
 		.pipe(gulp.dest(config.build + "js/"))

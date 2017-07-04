@@ -31,8 +31,11 @@ switch (props.answerIsCorrect) {
         <div className='col-xs-2 text-center'>
             {button}
             <br /><br />
-            <button className='btn btn-warning btn-sm' onClick={props.reDraw}>
-                <i className="material-icons" >loop</i>
+            <button 
+                className='btn btn-warning btn-sm'
+                disabled= {props.reDraws === 0} 
+                onClick={props.reDraw}>
+                <i className="material-icons" >loop</i> {props.reDraws}
             </button>
         </div>
     )
