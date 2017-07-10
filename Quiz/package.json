@@ -5,8 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
+  "jest": {
+  "setupFiles": ["./test/jestsetup.js"],
+  "snapshotSerializers": [
+    "/node_modules/enzyme-to-json/serializer"
+  ]
+},
   "author": "Binu",
   "license": "ISC",
   "devDependencies": {
@@ -18,6 +24,7 @@
     "gulp-connect": "^5.0.0",
     "gulp-sass": "^3.0.0",
     "gulp-sourcemaps": "^2.6.0",
+    "jest": "^20.0.4",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "vinyl-source-stream": "^1.1.0"
