@@ -16,7 +16,7 @@ class App extends React.Component {
         
         return(
             <div className="container" >
-                <h1>Budget tool</h1>
+                <h1>Typehead</h1>
                 <div className="questionWrapper" >
                   <Expenses />
                 </div>
