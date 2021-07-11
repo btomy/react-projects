@@ -1,17 +1,12 @@
 import React from "react";
 
-const Question = (props) =>{
-
-	const QuestionObejct = props.quiz[props.index];
-
-    return( 
-        <div className="questionWrapper" >
-            <div className='questions'>
-                {QuestionObejct.question}
-            </div>
+const Question = ({question}) => (
+    <div className="questionWrapper" >
+        <div className='questions'>
+            {question}
         </div>
-    )
-}
+    </div>
+);
 
 
 export default Question;

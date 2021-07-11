@@ -1,32 +1,30 @@
 import React from "react";
 
-class Answer extends React.Component{
-    constructor(props) {
-        super(props);
+const Answer = props => (
+    <form>
+        {props.options.map((option,i) => (
+            <div className={`option${i}`} key={i}>
+                <input
+                    type="radio"
+                    name='rad'
+                    id={`option_${i}`}
+                    onChange={() => {
+                        props.handleRadio(i)
+                    }}
+                />
+                <label htmlFor={`option_${i}`}>
+                    {option}
+                </label>
+            </div>
+        ))}
 
-    }
-
-    render() {
-
-        const options = this.props.options.map( (option,i) => {
-                return <div className={`option${i}`} key={i}>
-                    <input type="radio" name='rad' id={`option_${i}`} onChange={this.props.handleRadio.bind(this, i)} />
-                    <label htmlFor={`option_${i}`} > {option} </label>
-                </div>
-            });
-
-        return(
-            <form onSubmit={this.props.onClickCallback}>
-                {options}
-                <input 
-                    type="submit"
-                    className='waves-effect waves-light btn-large submit-button visible'
-                    onClick={this.props.onClickCallback} 
-                    disabled={ this.props.selectionMade ? '' : 'disabled'} />
-            </form>
-        )
-    }
-}
-
+        <input
+            type="submit"
+            className='waves-effect waves-light btn-large submit-button visible'
+            onClick={props.onClickCallback}
+            disabled={!props.selectionMade}
+        />
+    </form>
+);
 
 export default Answer;
